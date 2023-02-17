@@ -10,7 +10,6 @@ import {
 export function migrate(state: TDSnapshot, newVersion: number): TDSnapshot {
   const { document, settings } = state
   const { version = 0 } = document
-
   if (!('assets' in document)) {
     document.assets = {}
   }

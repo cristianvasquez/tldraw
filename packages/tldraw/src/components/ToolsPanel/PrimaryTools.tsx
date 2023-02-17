@@ -1,6 +1,7 @@
 import {
   ArrowTopRightIcon,
   CursorArrowIcon,
+  HeartIcon,
   ImageIcon,
   Pencil1Icon,
   Pencil2Icon,
@@ -36,6 +37,10 @@ export const PrimaryTools = React.memo(function PrimaryTools() {
 
   const selectEraseTool = React.useCallback(() => {
     app.selectTool('erase')
+  }, [app])
+
+  const selectIframeTool = React.useCallback(() => {
+    app.selectTool(TDShapeType.Iframe)
   }, [app])
 
   const selectDrawTool = React.useCallback(() => {
@@ -78,6 +83,17 @@ export const PrimaryTools = React.memo(function PrimaryTools() {
         <CursorArrowIcon />
       </ToolButtonWithTooltip>
       <ToolButtonWithTooltip
+        kbd={'2x'}
+        label={intl.formatMessage({ id: 'iframe' })}
+        onClick={selectIframeTool}
+        isActive={activeTool === TDShapeType.Iframe}
+        variant="primary"
+        id="TD-PrimaryTools-Iframe"
+      >
+        <HeartIcon />
+      </ToolButtonWithTooltip>
+
+      <ToolButtonWithTooltip
         kbd={'2'}
         label={intl.formatMessage({ id: 'draw' })}
         onClick={selectDrawTool}
@@ -97,7 +113,9 @@ export const PrimaryTools = React.memo(function PrimaryTools() {
       >
         <EraserIcon />
       </ToolButtonWithTooltip>
+
       <ShapesMenu activeTool={activeTool} isToolLocked={isToolLocked} />
+
       <ToolButtonWithTooltip
         kbd={'8'}
         label={intl.formatMessage({ id: 'arrow' })}
@@ -109,6 +127,7 @@ export const PrimaryTools = React.memo(function PrimaryTools() {
       >
         <ArrowTopRightIcon />
       </ToolButtonWithTooltip>
+
       <ToolButtonWithTooltip
         kbd={'9'}
         label={intl.formatMessage({ id: 'text' })}

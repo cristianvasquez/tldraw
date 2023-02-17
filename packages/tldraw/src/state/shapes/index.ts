@@ -1,3 +1,4 @@
+import { IframeUtil } from '~state/shapes/IframeUtil'
 import type { TDShapeUtil } from '~state/shapes/TDShapeUtil'
 import { TDShape, TDShapeType } from '~types'
 import { ArrowUtil } from './ArrowUtil'
@@ -11,6 +12,7 @@ import { TextUtil } from './TextUtil'
 import { TriangleUtil } from './TriangleUtil'
 import { VideoUtil } from './VideoUtil'
 
+export const Iframe = new IframeUtil()
 export const Rectangle = new RectangleUtil()
 export const Triangle = new TriangleUtil()
 export const Ellipse = new EllipseUtil()
@@ -23,6 +25,7 @@ export const Image = new ImageUtil()
 export const Video = new VideoUtil()
 
 export const shapeUtils = {
+  [TDShapeType.Iframe]: Iframe,
   [TDShapeType.Rectangle]: Rectangle,
   [TDShapeType.Triangle]: Triangle,
   [TDShapeType.Ellipse]: Ellipse,

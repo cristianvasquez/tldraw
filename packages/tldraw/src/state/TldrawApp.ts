@@ -26,6 +26,7 @@ import {
 import { DialogState } from '~hooks'
 import { shapeUtils } from '~state/shapes'
 import { defaultStyle } from '~state/shapes/shared'
+import { IframeTool } from '~state/tools/IframeTool'
 import {
   AlignStyle,
   AlignType,
@@ -204,6 +205,7 @@ export class TldrawApp extends StateManager<TDSnapshot> {
     [TDShapeType.Draw]: new DrawTool(this),
     [TDShapeType.Ellipse]: new EllipseTool(this),
     [TDShapeType.Rectangle]: new RectangleTool(this),
+    [TDShapeType.Iframe]: new IframeTool(this),
     [TDShapeType.Triangle]: new TriangleTool(this),
     [TDShapeType.Line]: new LineTool(this),
     [TDShapeType.Arrow]: new ArrowTool(this),

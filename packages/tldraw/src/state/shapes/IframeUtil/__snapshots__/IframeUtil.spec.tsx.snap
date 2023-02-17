@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Iframe shape Creates a shape: iframe 1`] = `
+Object {
+  "assetId": "assetId",
+  "childIndex": 1,
+  "id": "iframe",
+  "name": "Iframe",
+  "parentId": "page",
+  "point": Array [
+    0,
+    0,
+  ],
+  "rotation": 0,
+  "size": Array [
+    1,
+    1,
+  ],
+  "style": Object {
+    "color": "black",
+    "dash": "draw",
+    "isFilled": true,
+    "scale": 1,
+    "size": "small",
+  },
+  "type": "iframe",
+}
+`;

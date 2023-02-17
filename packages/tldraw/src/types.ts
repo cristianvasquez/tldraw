@@ -220,6 +220,7 @@ export type TDToolType =
   | TDShapeType.Text
   | TDShapeType.Draw
   | TDShapeType.Ellipse
+  | TDShapeType.Iframe
   | TDShapeType.Rectangle
   | TDShapeType.Triangle
   | TDShapeType.Line
@@ -286,6 +287,7 @@ export enum TDShapeType {
   Sticky = 'sticky',
   Ellipse = 'ellipse',
   Rectangle = 'rectangle',
+  Iframe = 'iframe',
   Triangle = 'triangle',
   Draw = 'draw',
   Arrow = 'arrow',
@@ -321,6 +323,13 @@ export interface TDHandle extends TLHandle {
 
 export interface RectangleShape extends TDBaseShape {
   type: TDShapeType.Rectangle
+  size: number[]
+  label?: string
+  labelPoint?: number[]
+}
+
+export interface IframeShape extends TDBaseShape {
+  type: TDShapeType.Iframe
   size: number[]
   label?: string
   labelPoint?: number[]
@@ -403,6 +412,7 @@ export interface GroupShape extends TDBaseShape {
 // A union of all shapes
 export type TDShape =
   | RectangleShape
+  | IframeShape
   | EllipseShape
   | TriangleShape
   | DrawShape

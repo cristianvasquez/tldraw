@@ -1,3 +1,4 @@
+import { IframeTool } from '~state/tools/IframeTool'
 import { TDShapeType, TDToolType } from '~types'
 import { ArrowTool } from './ArrowTool'
 import { DrawTool } from './DrawTool'
@@ -17,6 +18,7 @@ export interface ToolsMap {
   [TDShapeType.Draw]: typeof DrawTool
   [TDShapeType.Ellipse]: typeof EllipseTool
   [TDShapeType.Rectangle]: typeof RectangleTool
+  [TDShapeType.Iframe]: typeof IframeTool
   [TDShapeType.Triangle]: typeof TriangleTool
   [TDShapeType.Line]: typeof LineTool
   [TDShapeType.Arrow]: typeof ArrowTool
@@ -34,6 +36,7 @@ export const tools: { [K in TDToolType]: ToolsMap[K] } = {
   [TDShapeType.Draw]: DrawTool,
   [TDShapeType.Ellipse]: EllipseTool,
   [TDShapeType.Rectangle]: RectangleTool,
+  [TDShapeType.Iframe]: IframeTool,
   [TDShapeType.Triangle]: TriangleTool,
   [TDShapeType.Line]: LineTool,
   [TDShapeType.Arrow]: ArrowTool,
